@@ -1,0 +1,42 @@
+{
+  "name": "triangle/database",
+  "description": "Triangle Database Component",
+  "type": "library",
+  "keywords": [
+    "localzet",
+    "Triangle",
+    "Database"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Ivan Zorin",
+      "email": "creator@localzet.com",
+      "homepage": "https://github.com/localzet"
+    }
+  ],
+  "support": {
+    "email": "support@localzet.com",
+    "source": "https://github.com/Triangle-org/Session"
+  },
+  "autoload": {
+    "psr-4": {
+      "Triangle\\": "",
+      "Triangle\\Database\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "illuminate/database": "^11.19",
+    "illuminate/pagination": "^11.19",
+    "illuminate/events": "^11.19",
+    "symfony/var-dumper": "^7.1"
+  },
+  "require-dev": {
+    "triangle/engine": "*"
+  },
+  "suggest": {
+    "mongodb/laravel-mongodb": "For MongoDB Driver"
+  }
+}
