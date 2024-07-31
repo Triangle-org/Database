@@ -28,13 +28,11 @@
   },
   "require": {
     "php": ">=8.0",
+    "triangle/engine": ">=6.3",
     "illuminate/database": "^11.19",
     "illuminate/pagination": "^11.19",
     "illuminate/events": "^11.19",
     "symfony/var-dumper": "^7.1"
-  },
-  "require-dev": {
-    "triangle/engine": "*"
   },
   "suggest": {
     "mongodb/laravel-mongodb": "For MongoDB Driver"
