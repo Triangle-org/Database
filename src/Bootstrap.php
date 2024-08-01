@@ -38,7 +38,7 @@ use localzet\Timer;
 use MongoDB\Laravel\Connection as LaravelMongodbConnection;
 use support\Container;
 use Throwable;
-use Triangle\Engine\Interface\BootstrapInterface;
+use Triangle\Engine\BootstrapInterface;
 use Triangle\MongoDB\Connection as TriangleMongodbConnection;
 use function class_exists;
 use function config;
