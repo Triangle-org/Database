@@ -83,6 +83,7 @@ class Bootstrap implements BootstrapInterface
 
         // Добавляем соединения.
         $default = $config['default'] ?? false;
+        $persistent = $config['persistent'] ?? true;
         if ($default) {
             $defaultConfig = $connections[$config['default']] ?? false;
             if ($defaultConfig) {
@@ -106,11 +107,11 @@ class Bootstrap implements BootstrapInterface
         $capsule->bootEloquent();
 
         // Heartbeat
-        if ($server) {
+        if ($server && $persistent) {
             Timer::add(55, function () use ($default, $connections, $capsule) {
                 foreach ($capsule->getDatabaseManager()->getConnections() as $connection) {
                     /* @var MySqlConnection $connection * */
-                    if ($connection->getConfig('driver') == 'mysql') {
+                    if ($connection->getConfig('driver') == 'mysql' && $connection->getRawPdo()) {
                         try {
                             $connection->select('select 1');
                         } catch (Throwable) {

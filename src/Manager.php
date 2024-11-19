@@ -27,6 +27,7 @@
 namespace Triangle\Database;
 
 use Closure;
+use Illuminate\Database\Connection;
 
 /**
  * Класс Manager
@@ -47,4 +48,19 @@ use Closure;
  */
 class Manager extends \Illuminate\Database\Capsule\Manager
 {
+    /**
+     * @return object
+     */
+    public static function getInstance()
+    {
+        return static::$instance;
+    }
+
+    /**
+     * @return Connection[]
+     */
+    public static function getConnections()
+    {
+        return static::$instance->getDatabaseManager()->getConnections();
+    }
 }
