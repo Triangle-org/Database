@@ -18,7 +18,7 @@
   ],
   "support": {
     "email": "support@localzet.com",
-    "source": "https://github.com/Triangle-org/Session"
+    "source": "https://github.com/Triangle-org/Database"
   },
   "autoload": {
     "psr-4": {
@@ -27,8 +27,8 @@
     }
   },
   "require": {
-    "php": ">=8.0",
-    "triangle/engine": ">=6.3",
+    "php": "^8.1",
+    "triangle/engine": "^8.1",
     "illuminate/database": "^11.19",
     "illuminate/pagination": "^11.19",
     "illuminate/events": "^11.19",
