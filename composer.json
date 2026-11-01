@@ -27,12 +27,12 @@
     }
   },
   "require": {
-    "php": "^8.1",
+    "php": "^8.2",
     "triangle/engine": "^8.1",
-    "illuminate/database": "~11.19.0",
-    "illuminate/pagination": "~11.19.0",
-    "illuminate/events": "~11.19.0",
-    "symfony/var-dumper": "~7.1.0"
+    "illuminate/database": "^11.19",
+    "illuminate/pagination": "^11.19",
+    "illuminate/events": "^11.19",
+    "symfony/var-dumper": "^7.1"
   },
   "conflict": {
     "illuminate/database": ">=12.0",
