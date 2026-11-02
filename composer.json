@@ -42,5 +42,10 @@
   },
   "suggest": {
     "mongodb/laravel-mongodb": "For MongoDB Driver"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2.0"
+    }
   }
 }
