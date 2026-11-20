@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * @package     Triangle Database Component
+ * @link        https://github.com/Triangle-org/Database
+ * @author      Ivan Zorin <creator@localzet.com>
+ * @copyright   Copyright © 2016-2026 Localzet Group. All rights reserved.
+ * @license     AGPL-3.0-or-later
+ */
+
 return [
     'default' => env('DB_CONNECTION', 'mysql'),
     'connections' => [

@@ -26,10 +26,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [2.0.0] - Unreleased
 
-### Planned
-- Performance optimizations
-- Connection pooling improvements
-- Advanced query logging
+### Changed
+- Require Triangle Engine 9 and Localzet Server 7.
+- Upgrade Illuminate Database, Events, and Pagination to 12.x.
+- Require Symfony VarDumper 7.4 and PHP 8.2 or newer.
+
+### Removed
+- Drop compatibility with Triangle Engine 8 and earlier.
+
+### Tests
+- Add a SQLite integration check for Engine 9 bootstrap and Eloquent model reads/writes.
 
