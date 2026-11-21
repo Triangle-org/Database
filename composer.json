@@ -20,6 +20,9 @@
     "email": "support@localzet.com",
     "source": "https://github.com/Triangle-org/Database"
   },
+  "scripts": {
+    "test": "php tests/bootstrap.php"
+  },
   "autoload": {
     "psr-4": {
       "Triangle\\": "",
@@ -28,17 +31,11 @@
   },
   "require": {
     "php": "^8.2",
-    "triangle/engine": "^8.1",
-    "illuminate/database": "^11.19",
-    "illuminate/pagination": "^11.19",
-    "illuminate/events": "^11.19",
-    "symfony/var-dumper": "^7.1"
-  },
-  "conflict": {
-    "illuminate/database": ">=12.0",
-    "illuminate/pagination": ">=12.0",
-    "illuminate/events": ">=12.0",
-    "symfony/var-dumper": ">=8.0"
+    "triangle/engine": "^9.0",
+    "illuminate/database": "^12.0",
+    "illuminate/pagination": "^12.0",
+    "illuminate/events": "^12.0",
+    "symfony/var-dumper": "^7.4"
   },
   "suggest": {
     "mongodb/laravel-mongodb": "For MongoDB Driver"
