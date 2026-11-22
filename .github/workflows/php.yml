@@ -19,13 +19,13 @@ jobs:
       matrix:
         php: ['8.2', '8.5']
         dependencies: ['latest', 'lowest']
-      include:
-        - php: '8.2'
-          dependencies: 'illuminate-12'
-        - php: '8.3'
-          dependencies: 'illuminate-13'
-        - php: '8.5'
-          dependencies: 'illuminate-13'
+        include:
+          - php: '8.2'
+            dependencies: 'illuminate-12'
+          - php: '8.3'
+            dependencies: 'illuminate-13'
+          - php: '8.5'
+            dependencies: 'illuminate-13'
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
