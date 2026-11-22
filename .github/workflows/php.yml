@@ -19,6 +19,11 @@ jobs:
       matrix:
         php: ['8.2', '8.5']
         dependencies: ['latest', 'lowest']
+      include:
+        - php: '8.2'
+          dependencies: 'illuminate-12'
+        - php: '8.5'
+          dependencies: 'illuminate-13'
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -37,11 +42,22 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [[ "${{ matrix.dependencies }}" == "lowest" ]]; then
+          if [[ "${{ matrix.dependencies }}" == "illuminate-12" ]]; then
+            composer update illuminate/database:^12.0 illuminate/pagination:^12.0 illuminate/events:^12.0 --with-all-dependencies --prefer-dist --no-interaction --no-progress --no-scripts
+          elif [[ "${{ matrix.dependencies }}" == "illuminate-13" ]]; then
+            composer update illuminate/database:^13.0 illuminate/pagination:^13.0 illuminate/events:^13.0 --with-all-dependencies --prefer-dist --no-interaction --no-progress --no-scripts
+          elif [[ "${{ matrix.dependencies }}" == "lowest" ]]; then
             composer update --prefer-lowest --prefer-stable --prefer-dist --no-interaction --no-progress --no-scripts
           else
             composer update --prefer-dist --no-interaction --no-progress --no-scripts
           fi
+
+      - name: Verify Illuminate dependency track
+        if: matrix.dependencies == 'illuminate-12' || matrix.dependencies == 'illuminate-13'
+        env:
+          EXPECTED_ILLUMINATE_MAJOR: ${{ matrix.dependencies == 'illuminate-12' && '12' || '13' }}
+        run: |
+          composer show illuminate/database --format=json | php -r '$package = json_decode(stream_get_contents(STDIN), true); $version = $package["versions"][0] ?? ""; if (!str_starts_with($version, "v" . $argv[1] . ".")) { fwrite(STDERR, "Unexpected Illuminate Database version: " . $version . "\n"); exit(1); }' "$EXPECTED_ILLUMINATE_MAJOR"
 
       - name: Audit dependencies
         run: composer audit --no-interaction

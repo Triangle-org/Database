@@ -11,10 +11,12 @@ Triangle Database подключает [Illuminate Database](https://laravel.com
 | PHP | 8.2 или новее |
 | Triangle Engine | 9.x |
 | Localzet Server | 7.x, устанавливается через Triangle Engine |
-| Illuminate Database, Events, Pagination | 12.x |
+| Illuminate Database, Events, Pagination | 12.x или 13.x |
 | Symfony VarDumper | 7.4.x |
 
 Engine 8 и более ранние версии эта ветка не поддерживает. При переходе с опубликованной линии 1.x обновляйте компоненты Triangle согласованно и проверяйте lock-файл до выкладки.
+
+Illuminate 12 поддерживает пакет на PHP 8.2 и новее. Для Illuminate 13 требуется PHP 8.4.1 или новее; Composer выбирает совместимую основную версию с учётом версии PHP, на которой разрешаются зависимости.
 
 ## Установка
 

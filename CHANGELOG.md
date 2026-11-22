@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Support Illuminate Database, Events, and Pagination 12.x and 13.x. Illuminate 13 requires PHP 8.4.1 or newer; PHP 8.2 and 8.3 continue to resolve Illuminate 12.
+- Verify both Illuminate major-version tracks in GitHub Actions.
+
 ---
 
 ## [2.0.0] - 2026-11-21

@@ -11,10 +11,12 @@ This branch prepares the next major release, `2.x`. The published `1.x` line tar
 | PHP | 8.2 or newer |
 | Triangle Engine | 9.x |
 | Localzet Server | 7.x, provided by Triangle Engine |
-| Illuminate Database, Events, Pagination | 12.x |
+| Illuminate Database, Events, Pagination | 12.x or 13.x |
 | Symfony VarDumper | 7.4.x |
 
 Engine 8 and earlier are not supported by this branch. A project migrating from the published 1.x line should upgrade its Triangle components together and review its dependency lock before deployment.
+
+Illuminate 12 supports this package on PHP 8.2 and newer. Illuminate 13 requires PHP 8.4.1 or newer; Composer selects the compatible major version for the PHP version used to resolve dependencies.
 
 ## Install
 
