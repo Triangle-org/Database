@@ -2,7 +2,7 @@
 
 Triangle Database connects [Illuminate Database](https://laravel.com/docs/database) to applications running on Triangle Engine 9 and Localzet Server 7. It boots Eloquent and the query builder, registers database connections from the Engine configuration, and wires pagination to the current request.
 
-This branch prepares the next major release, `2.x`. The published `1.x` line targets older Engine versions. Until `2.x` is released, install this branch only when you intend to test the Engine 9 migration.
+The current release is [`2.1.0`](https://github.com/Triangle-org/Database/releases/tag/v2.1.0). It supports Triangle Engine 9, Localzet Server 7, and Illuminate Database 12 or 13. The published `1.x` line targets older Engine versions and is not compatible with this release.
 
 ## Compatibility
 
@@ -20,13 +20,13 @@ Illuminate 12 supports this package on PHP 8.2 and newer. Illuminate 13 requires
 
 ## Install
 
-After the 2.x release is published:
+Install the current 2.x release:
 
 ```sh
-composer require triangle/database:^2.0
+composer require triangle/database:^2.1
 ```
 
-During development, use the repository branch or a local Composer path repository. Do not assume the Packagist 1.x release contains Engine 9 support.
+Verify the installed version with `composer show triangle/database`. Review your lockfile before deployment when upgrading from 1.x.
 
 ## Configure a connection
 

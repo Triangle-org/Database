@@ -2,7 +2,7 @@
 
 Triangle Database подключает [Illuminate Database](https://laravel.com/docs/database) к приложениям на Triangle Engine 9 и Localzet Server 7. Компонент запускает Eloquent и query builder, регистрирует соединения из конфигурации Engine и связывает пагинацию с текущим запросом.
 
-Эта ветка готовит следующую основную версию `2.x`. Опубликованная линия `1.x` рассчитана на более старые версии Engine. До выпуска `2.x` устанавливайте эту ветку только для проверки миграции на Engine 9.
+Текущая версия — [`2.1.0`](https://github.com/Triangle-org/Database/releases/tag/v2.1.0). Она поддерживает Triangle Engine 9, Localzet Server 7 и Illuminate Database 12 или 13. Опубликованная линия `1.x` рассчитана на старые версии Engine и несовместима с этим выпуском.
 
 ## Совместимость
 
@@ -20,13 +20,13 @@ Illuminate 12 поддерживает пакет на PHP 8.2 и новее. Д
 
 ## Установка
 
-После публикации версии 2.x:
+Установите текущую версию 2.x:
 
 ```sh
-composer require triangle/database:^2.0
+composer require triangle/database:^2.1
 ```
 
-Во время разработки подключайте ветку репозитория или локальный Composer path repository. Не считайте, что опубликованный пакет 1.x уже поддерживает Engine 9.
+Проверьте установленную версию командой `composer show triangle/database`. Перед развёртыванием после обновления с 1.x проверьте lock-файл.
 
 ## Настройка соединения
 
