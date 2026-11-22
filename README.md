@@ -16,7 +16,7 @@ This branch prepares the next major release, `2.x`. The published `1.x` line tar
 
 Engine 8 and earlier are not supported by this branch. A project migrating from the published 1.x line should upgrade its Triangle components together and review its dependency lock before deployment.
 
-Illuminate 12 supports this package on PHP 8.2 and newer. Illuminate 13 requires PHP 8.4.1 or newer; Composer selects the compatible major version for the PHP version used to resolve dependencies.
+Illuminate 12 supports this package on PHP 8.2 and newer. Illuminate 13 requires PHP 8.3 or newer; Composer selects the compatible major version for the PHP version used to resolve dependencies.
 
 ## Install
 
@@ -99,7 +99,7 @@ composer validate --strict --no-check-publish
 composer test
 ```
 
-The integration test boots Engine 9 against an in-memory SQLite database, creates a table, and verifies an Eloquent insert and read. GitHub Actions runs the checks on PHP 8.2 and 8.5 with both the lowest supported and latest allowed dependency versions. The workflow resolves dependencies from `composer.json` because this library does not commit a lock file. It does not test external database services or production credentials.
+The integration test boots Engine 9 against an in-memory SQLite database, creates a table, and verifies an Eloquent insert and read. GitHub Actions runs the checks on PHP 8.2 and 8.5 with both the lowest supported and latest allowed dependency versions. It also tests Illuminate 12 on PHP 8.2 and Illuminate 13 on PHP 8.3 and 8.5, covering the minimum and latest supported PHP versions for Illuminate 13. The workflow resolves dependencies from `composer.json` because this library does not commit a lock file. It does not test external database services or production credentials.
 
 ## Security and operations
 
