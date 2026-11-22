@@ -45,9 +45,11 @@ jobs:
       - name: Install dependencies
         run: |
           if [[ "${{ matrix.dependencies }}" == "illuminate-12" ]]; then
-            composer update illuminate/database:^12.0 illuminate/pagination:^12.0 illuminate/events:^12.0 --with-all-dependencies --prefer-dist --no-interaction --no-progress --no-scripts
+            composer require --no-update --no-interaction --no-scripts illuminate/database:^12.0 illuminate/pagination:^12.0 illuminate/events:^12.0
+            composer update --prefer-dist --no-interaction --no-progress --no-scripts
           elif [[ "${{ matrix.dependencies }}" == "illuminate-13" ]]; then
-            composer update illuminate/database:^13.0 illuminate/pagination:^13.0 illuminate/events:^13.0 --with-all-dependencies --prefer-dist --no-interaction --no-progress --no-scripts
+            composer require --no-update --no-interaction --no-scripts illuminate/database:^13.0 illuminate/pagination:^13.0 illuminate/events:^13.0
+            composer update --prefer-dist --no-interaction --no-progress --no-scripts
           elif [[ "${{ matrix.dependencies }}" == "lowest" ]]; then
             composer update --prefer-lowest --prefer-stable --prefer-dist --no-interaction --no-progress --no-scripts
           else
